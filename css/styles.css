@@ -1,0 +1,15 @@
+body{
+  background-image: url("../dice.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+.frm{
+  width: 50%;
+}
+.resultPlayer1{
+  background-color: white;
+}
+.resultPlayer1{
+  background-color: white;
+}
