@@ -43,22 +43,22 @@ $(document).ready(function(){
     });
   });
 
-// player two code for the rolling the die
-//   $(".player2").submit(function(event){
-//     event.preventDefault();
-//
-//     $(this).closest('form').find("input").prop('disabled', true);
-//
-//     var player2 = $("#playerTwo").val();
-//     var scorePlayer2 = 0;
-//
-//     var score2 = new gameScore(player2, scorePlayer2);
-//     $("#addPlayer2").attr("disabled", true);
-//
-//     $("button#role2").click(function(){
-//       $(".resultPlayer2").text(score2.addingScore(scorePlayer2));
-//
-//     });
-//   });
+player two code for the rolling the die
+  $(".player2").submit(function(event){
+    event.preventDefault();
+
+    $(this).closest('form').find("input").prop('disabled', true);
+
+    var player2 = $("#playerTwo").val();
+    var scorePlayer2 = 0;
+
+    var score2 = new gameScore(player2, scorePlayer2);
+    $("#addPlayer2").attr("disabled", true);
+
+    $("button#role2").click(function(){
+      $(".resultPlayer2").text(score2.addingScore(scorePlayer2));
+
+    });
+  });
 //
  });
