@@ -11,10 +11,10 @@ gameScore.prototype.addingScore = function (points) {
 
       if (Math.floor((Math.random() * 6) + 1)>1) {
 
-        return this.score += randomValue;
-        
+        return this.score += Math.floor((Math.random() * 6) + 1);
+
       }else {
-        return alert("Switch players");
+        alert("Switch players");
       }
 };
 
@@ -26,7 +26,7 @@ $(document).ready(function(){
     event.preventDefault();
      $(this).closest('form').find("input").prop('disabled', true);
     var player1 = $("#playerOne").val();
-    var scorePlayer1 = parseInt(0);
+    var scorePlayer1 = 0;
 
     var score1 = new gameScore( player1,scorePlayer1);
 
@@ -34,8 +34,8 @@ $(document).ready(function(){
 
     $("button#role1").click(function(){
         console.log(score1.namePlayer(player1));
-        console.log(score1.addingScore());
-      $(".resultPlayer1").text(score1.addingScore());
+
+      $(".resultPlayer1").text(score1.addingScore(scorePlayer1));
       if (score1.addingScore()===100) {
         alert(score1.namePlayer(player1) + " You have won!!!");
       }
@@ -59,6 +59,9 @@ $(document).ready(function(){
 
     $("button#role2").click(function(){
       $(".resultPlayer2").text(score2.addingScore(scorePlayer2));
+      if (score2.addingScore()===100) {
+        alert(score2.namePlayer(player2) + " You have won!!!");
+      }
 
     });
   });
