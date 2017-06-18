@@ -43,7 +43,7 @@ $(document).ready(function(){
     });
   });
 
-player two code for the rolling the die
+// player two code for the rolling the die
   $(".player2").submit(function(event){
     event.preventDefault();
 
