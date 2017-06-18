@@ -3,20 +3,24 @@ function gameScore(name,score){
   this.name =name;
   this.score = score;
 }
-gameScore.prototype.addingScore = function (score) {
-  return this.score+=Math.floor((Math.random()*6)+1);
-};
+
 // user interface logic
 $(document).ready(function(){
   $(".player1").submit(function(event){
     event.preventDefault();
+     $(this).closest('form').find("input").prop('disabled', true);
+
     var player1 = $("#playerOne").val();
-    console.log(player1);
+    var scorePlayer1 = 0;
+
+    var score1 = new gameScore( player1,scorePlayer1);
+
+    $("#addPlayer").attr("disabled", true);
+
+
 
     $("button#role1").click(function(){
-      var score1 = new gameScore( player1,0);
-      console.log("error");
-      console.log(score1.addingScore());
+
 
     });
   });
@@ -24,7 +28,15 @@ $(document).ready(function(){
 
   $(".player2").submit(function(event){
     event.preventDefault();
+
+    $(this).closest('form').find("input").prop('disabled', true);
+
     var player2 = $("#playerTwo").val();
+    var scorePlayer2 = 0;
+
+    var score2 = new gameScore(player2, scorePlayer2);
+    $("#addPlayer2").attr("disabled", true);
+
     $("button#role2").click(function(){
 
     });

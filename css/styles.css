@@ -9,7 +9,15 @@ body{
 }
 .resultPlayer1{
   background-color: white;
+  padding: 40px;
+  margin-top: 50px;
+  margin-right: 75%;
+  color: black;
 }
-.resultPlayer1{
+.resultPlayer2{
   background-color: white;
+  padding: 40px;
+  margin-top: 50px;
+  margin-right: 75%;
+  color: black;
 }

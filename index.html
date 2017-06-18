@@ -9,29 +9,41 @@
     <script src="js/script.js" charset="utf-8"></script>
   </head>
   <body>
-    <h1>Lets Play Pig Dice</h1>
-    <h3>Player 1</h3>
-    <form class="player1" action="index.html" method="post">
-      <div class="form-group">
-        <label for="playerOne"></label>
-        <input type="text" id="playerOne" class="form-control frm">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Lets Play Pig Dice</h1>
+          <h3>Player 1</h3>
+          <form class="player1" action="index.html" method="post">
+            <div class="form-group">
+              <label for="playerOne"></label>
+              <input type="text" id="playerOne" class="form-control frm">
+              <button type="submit"  class="btn btn-default" id="addPlayer">Add player</button>
+            </div>
+          </form>
+          <button type="button" name="button" id="role1" class="btn btn-default">Roll Dice</button>
+
+          <h3>Player 2</h3>
+          <form class="player2" action="index.html" method="post">
+            <div class="form-group">
+              <label for="playerTwo"></label>
+              <input type="text" id="playerTwo" class="form-control frm">
+                <button type="submit"  class="btn btn-default" id="addPlayer2">Add player</button>
+            </div>
+          </form>
+          <button type="button" name="button" id="role2" class="btn btn-default">Roll Dice</button>
+        </div>
+        <h3 color:red>Player one Score</h3>
+        <div class="col-md-6">
+          <div class="resultPlayer1">
+
+          </div>
+        <h3>Player two Score</h3>
+          <div class="resultPlayer2">
+
+          </div>
+        </div>
       </div>
-    </form>
-    <button type="button" name="button" id="role1" class="btn btn-default">Roll Dice</button>
-    <div class="resultPlayer1">
-
     </div>
-    <h3>Player 2</h3>
-    <form class="player2" action="index.html" method="post">
-      <div class="form-group">
-        <label for="playerTwo"></label>
-        <input type="text" id="playerTwo" class="form-control frm">
-      </div>
-    </form>
-    <button type="button" name="button" id="role2" class="btn btn-default">Roll Dice</button>
-    <div class="resultPlayer2">
-
-    </div>
-
   </body>
 </html>
