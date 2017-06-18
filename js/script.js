@@ -8,14 +8,14 @@ gameScore.prototype.namePlayer = function () {
 };
 gameScore.prototype.addingScore = function (points) {
 
-      if (Math.floor((Math.random() * 6) + 1)===1) {
-        return alert("Switch players");
+      if (Math.floor((Math.random() * 6) + 1)>1) {
 
-
-      }else {
         return this.score += Math.floor((Math.random() * 6) + 1);
+      }else {
+        return alert("Switch players");
       }
 };
+
 
 // user interface logic
 $(document).ready(function(){
