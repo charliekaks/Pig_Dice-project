@@ -1,4 +1,5 @@
 //business logic
+var randomValue = Math.floor((Math.random() * 6) + 1);
 function gameScore(name,score){
   this.name =name;
   this.score = score;
@@ -10,7 +11,8 @@ gameScore.prototype.addingScore = function (points) {
 
       if (Math.floor((Math.random() * 6) + 1)>1) {
 
-        return this.score += Math.floor((Math.random() * 6) + 1);
+        return this.score += randomValue;
+        
       }else {
         return alert("Switch players");
       }
