@@ -39,3 +39,6 @@ body{
 .winner h3{
   color: black;
 }
+#role2, #hold2{
+  display: none;
+}
