@@ -3,6 +3,7 @@ body{
   background-size: cover;
   background-attachment: fixed;
   color: white;
+  font-family: 'Spectral', serif;
 }
 .frm{
   width: 50%;
@@ -24,4 +25,17 @@ body{
   color: black;
   font-size: 25px;
   border-radius: 5px;
+}
+.winner{
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 10%;
+  margin-left: 25%;
+  margin-right: 25%;
+
+}
+.winner h3{
+  color: black;
 }

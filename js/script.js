@@ -1,21 +1,27 @@
 //business logic
-var randomValue = Math.floor((Math.random() * 6) + 1);
-function gameScore(name,score){
+var totalPoints =0;
+function gameScore(name){
   this.name =name;
-  this.score = score;
+  this.score=0;
 }
 gameScore.prototype.namePlayer = function () {
   return this.name;
 };
-gameScore.prototype.addingScore = function (points) {
+gameScore.prototype.addingScore = function () {
+  var points =Math.floor((Math.random() * 6) + 1);
+  if (points===1) {
+   alert("Your turn is over, switch to next player");
+   this.score-=totalPoints;
+   totalPoints=0;
+   $("button#role1").toggle();
+   $("button#role2").toggle();
+   $("button#hold1").toggle();
+   $("button#hold2").toggle();
 
-      if (Math.floor((Math.random() * 6) + 1)>1) {
-
-        return this.score += Math.floor((Math.random() * 6) + 1);
-
-      }else {
-        alert("Switch players");
-      }
+  }else{
+    this.score+=points;
+    totalPoints  +=  points;
+  }
 };
 
 
@@ -26,44 +32,61 @@ $(document).ready(function(){
     event.preventDefault();
      $(this).closest('form').find("input").prop('disabled', true);
     var player1 = $("#playerOne").val();
-    var scorePlayer1 = 0;
+    // var scorePlayer1 = 0;
 
-    var score1 = new gameScore( player1,scorePlayer1);
+    var score1 = new gameScore( player1);
 
     $("#addPlayer").attr("disabled", true);
 
     $("button#role1").click(function(){
-        console.log(score1.namePlayer(player1));
-
-      $(".resultPlayer1").text(score1.addingScore(scorePlayer1));
-      if (score1.addingScore()===100) {
-        alert(score1.namePlayer(player1) + " You have won!!!");
+      score1.addingScore();
+      $(".resultPlayer1").text(score1.score);
+      score1.namePlayer();
+      if (score1.score>=100) {
+        $(".winner").append(score1.name);
       }
-
-
-
     });
+    $("button#hold1").click(function(){
+      //alert("Your turn is over, switch to next player");
+      $("button#role1").hide();
+      $("button#role2").show();
+      $("button#hold1").hide();
+      $("button#hold2").show();
+      totalPoints=0;
+    });
+
   });
 
 // player two code for the rolling the die
-  $(".player2").submit(function(event){
-    event.preventDefault();
+    $(".player2").submit(function(event){
+      event.preventDefault();
+       $(this).closest('form').find("input").prop('disabled', true);
+      var player2 = $("#playerTwo").val();
 
-    $(this).closest('form').find("input").prop('disabled', true);
+      var score2 = new gameScore(player2);
 
-    var player2 = $("#playerTwo").val();
-    var scorePlayer2 = 0;
+      $("#addPlayer2").attr("disabled", true);
 
-    var score2 = new gameScore(player2, scorePlayer2);
-    $("#addPlayer2").attr("disabled", true);
+      $("button#role2").click(function(){
+        score2.addingScore();
+        console.log(score2.score);
+        $(".resultPlayer2").text(score2.score);
+        score2.namePlayer()
+        if (score2.score>=100) {
+           $(".winner").append(score2.name);
+       }
 
-    $("button#role2").click(function(){
-      $(".resultPlayer2").text(score2.addingScore(scorePlayer2));
-      if (score2.addingScore()===100) {
-        alert(score2.namePlayer(player2) + " You have won!!!");
-      }
 
-    });
-  });
+      });
+      $("button#hold2").click(function(){
+
+        $("button#role1").show();
+        $("button#role2").hide();
+        $("button#hold1").show();
+        $("button#hold2").hide();
+        totalPoints=0;
+      });
+
+});
 //
  });
